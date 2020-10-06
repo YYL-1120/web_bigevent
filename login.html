@@ -40,12 +40,13 @@
                 <!--  密码 -->
                 <div class="layui-form-item">
                     <i class="layui-icon layui-icon-password"></i>
+                    <!--  lay-verify 针对于表单的验证 需要使用到 layui 的js文件 -->
                     <input type="password" name="password" required lay-verify="required|pass" placeholder="请输入密码"
                         autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-form-item">
                     <!-- lay-submit属性可以实现表单提交 -->
-                    <button class="layui-btn layui-btn-fluid layui-btn-normal" lay-submit>登录</button>
+                    <button class="layui-btn layui-btn-fluid  layui-btn-normal" lay-submit>登录</button>
                 </div>
 
                 <div class="layui-form-item links">
@@ -74,8 +75,8 @@
                 <!--  再次确认密码 -->
                 <div class="layui-form-item">
                     <i class="layui-icon layui-icon-password"></i>
-                    <input type="password" name="repassword" required lay-verify="required|pass|repass" placeholder="再次确认密码"
-                        autocomplete="off" class="layui-input">
+                    <input type="password" name="repassword" required lay-verify="required|pass|repass"
+                        placeholder="再次确认密码" autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-form-item">
                     <!-- lay-submit属性可以实现表单提交 -->
