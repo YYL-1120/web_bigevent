@@ -44,8 +44,9 @@ $(function () {
                 password: $('#form_reg [name = password').val()
             },
             success: function (res) {
+                console.log(res);
                 if (res.status != 0) {
-                    return layer.mes(res.message);
+                    return layer.msg(res.message);
                 }
                 console.log('注册成功');
                 //  模拟人的点击行为
@@ -56,27 +57,31 @@ $(function () {
 
     //  监听登录表单的提交事件
     $('#form_login').on('submit', function (e) {
-        //  
+        //  监听登录表单的默认行为
         e.preventDefault();
-        // 
+        //  设置ajax请求
         $.ajax({
-            method: 'GET',
+            method: 'POST',
             url: '/api/login',
             data: $(this).serialize(),
             success: function (res) {
                 if (res.status != 0) {
-                    return  layer.mes('登录失败');
-                } 
-                layer.mes('登录成功！');
+                    return layer.msg('登录失败');
+                }
+                layer.msg('登录成功！');
+                console.log(res);
 
                 //  获取权限
                 //  将登陆成功获取的token值保存到localStorage 中
                 localStorage.setItem('token', res.token);
                 console.log(res.token);
 
+                
                 //  跳转至后台页面
                 location.href = './index.html';
             }
-        })
+        });
+        
+        
     })
 })
