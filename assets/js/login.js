@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-10-06 19:02:56
+ * @LastEditTime: 2020-10-07 17:57:22
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \10_bigThings\assets\js\login.js
+ */
 $(function () {
     //  点击注册账号的链接
     $('#link_reg').on('click', function () {
@@ -69,19 +77,23 @@ $(function () {
                     return layer.msg('登录失败');
                 }
                 layer.msg('登录成功！');
-                console.log(res);
-
+                // console.log(res);
+                // console.log('---------------------');
+                // console.log($(this));
+                // console.log($(this).serialize());
+                // console.log($('#form_login'));
+                // console.log($('#form_login').serialize());
                 //  获取权限
                 //  将登陆成功获取的token值保存到localStorage 中
                 localStorage.setItem('token', res.token);
-                console.log(res.token);
+                // console.log(res.token);
 
-                
+
                 //  跳转至后台页面
                 location.href = './index.html';
             }
         });
-        
-        
-    })
+
+    });
+
 })
